@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ejercicio2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string entrada;
+            int numero;
+            
+            do
+            {
+                Console.Write("Ingresar Numero mayor a 0:");
+                entrada = Console.ReadLine();
+                if (int.TryParse(entrada, out numero))
+                {
+                    if(numero > 0)
+                    {
+                        Console.WriteLine("Numero al Cuadrado:{0}, Numero al cubo: {1}", Math.Pow(numero, 2), Math.Pow(numero, 3));
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR!, Reingrese Numero.");
+                    }
+                }
+            } while (numero <= 0);
+            
+            
+        }
+    }
+}

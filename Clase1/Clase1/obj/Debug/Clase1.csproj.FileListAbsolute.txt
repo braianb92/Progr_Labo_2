@@ -1,0 +1,7 @@
+D:\Baldino\Clase1\Clase1\bin\Debug\Clase1.exe.config
+D:\Baldino\Clase1\Clase1\bin\Debug\Clase1.exe
+D:\Baldino\Clase1\Clase1\bin\Debug\Clase1.pdb
+D:\Baldino\Clase1\Clase1\obj\Debug\Clase1.csprojAssemblyReference.cache
+D:\Baldino\Clase1\Clase1\obj\Debug\Clase1.csproj.CoreCompileInputs.cache
+D:\Baldino\Clase1\Clase1\obj\Debug\Clase1.exe
+D:\Baldino\Clase1\Clase1\obj\Debug\Clase1.pdb

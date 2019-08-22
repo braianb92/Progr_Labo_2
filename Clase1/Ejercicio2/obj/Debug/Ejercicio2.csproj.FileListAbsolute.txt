@@ -1,0 +1,6 @@
+D:\Baldino\Clase1\Ejercicio2\bin\Debug\Ejercicio2.exe.config
+D:\Baldino\Clase1\Ejercicio2\bin\Debug\Ejercicio2.exe
+D:\Baldino\Clase1\Ejercicio2\bin\Debug\Ejercicio2.pdb
+D:\Baldino\Clase1\Ejercicio2\obj\Debug\Ejercicio2.csproj.CoreCompileInputs.cache
+D:\Baldino\Clase1\Ejercicio2\obj\Debug\Ejercicio2.exe
+D:\Baldino\Clase1\Ejercicio2\obj\Debug\Ejercicio2.pdb
