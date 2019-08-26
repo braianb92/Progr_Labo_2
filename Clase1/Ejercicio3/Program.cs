@@ -10,6 +10,10 @@ namespace Ejercicio3
     {
         static void Main(string[] args)
         {
+            //Mostrar por pantalla todos los números primos que haya hasta el número que ingrese el usuario
+            //por consola.
+            //Nota: Utilizar estructuras repetitivas, selectivas y la función módulo(%).
+
             string consola;
             int numeroIngresado;
             int numeroAnterior;

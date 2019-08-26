@@ -10,6 +10,10 @@ namespace Clase1
     {
         static void Main(string[] args)
         {
+
+            //Ingresar 5 números por consola, guardándolos en una variable escalar.Luego calcular y mostrar: el
+            //valor máximo, el valor mínimo y el promedio.
+
             string consola;
             int numero;
             int sumatoria = 0 ;

@@ -10,26 +10,36 @@ namespace Ejercicio4
     {
         static void Main(string[] args)
         {
-            int numeroRecorrido;
-            int numeroAnterior;
-            int acumulador = 0;
+            //Un número perfecto es un entero positivo, que es igual a la suma de todos los enteros positivos
+            //(excluido el mismo) que son divisores del número.
+            //El primer número perfecto es 6, ya que los divisores de 6 son 1, 2 y 3; y 1 + 2 + 3 = 6.
+            //Escribir una aplicación que encuentre los 4 primeros números perfectos.
+            //Nota: Utilizar estructuras repetitivas y selectivas.
 
-            for (numeroRecorrido = numeroIngresado - 1; numeroRecorrido > 1; numeroRecorrido--)
+            int acumulador;
+            int i;
+            int j;
+            string divisores = "";
+
+            for (i = 1; i <= int.MaxValue; i++)
             {
-                for (numeroAnterior = numeroRecorrido - 1; numeroAnterior > 1; numeroAnterior--)
+                acumulador = 0;
+
+                for (j = 1; j <= (i / 2); j++)
                 {
-                    if (numeroRecorrido % numeroAnterior == 0)
+                    if (i % j == 0)
                     {
-                        break;
+                        acumulador += j;
+                        divisores += " " + j + " ";
                     }
-
                 }
-                if (numeroAnterior == 1)
+                if (acumulador == i)
                 {
-                    Console.WriteLine("El numero {0} es primo.", numeroRecorrido);
-                }
-
+                    Console.WriteLine("El numero " + i + " es perfecto y su divisores son: " + divisores);
+                }            
+                divisores = "";
             }
+            Console.ReadKey();
         }
     }
 }
