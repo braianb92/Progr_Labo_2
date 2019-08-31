@@ -1,0 +1,14 @@
+D:\Baldino\Clase1\Ejercicio3\bin\Debug\Ejercicio3.exe.config
+D:\Baldino\Clase1\Ejercicio3\bin\Debug\Ejercicio3.exe
+D:\Baldino\Clase1\Ejercicio3\bin\Debug\Ejercicio3.pdb
+D:\Baldino\Clase1\Ejercicio3\obj\Debug\Ejercicio3.csprojAssemblyReference.cache
+D:\Baldino\Clase1\Ejercicio3\obj\Debug\Ejercicio3.csproj.CoreCompileInputs.cache
+D:\Baldino\Clase1\Ejercicio3\obj\Debug\Ejercicio3.exe
+D:\Baldino\Clase1\Ejercicio3\obj\Debug\Ejercicio3.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\bin\Debug\Ejercicio3.exe.config
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\bin\Debug\Ejercicio3.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\bin\Debug\Ejercicio3.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\obj\Debug\Ejercicio3.csprojAssemblyReference.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\obj\Debug\Ejercicio3.csproj.CoreCompileInputs.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\obj\Debug\Ejercicio3.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio3\obj\Debug\Ejercicio3.pdb

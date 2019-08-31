@@ -1,7 +1,0 @@
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\bin\Debug\Ejercicio5.exe.config
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\bin\Debug\Ejercicio5.exe
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\bin\Debug\Ejercicio5.pdb
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\obj\Debug\Ejercicio5.csprojAssemblyReference.cache
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\obj\Debug\Ejercicio5.csproj.CoreCompileInputs.cache
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\obj\Debug\Ejercicio5.exe
-C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio5\obj\Debug\Ejercicio5.pdb

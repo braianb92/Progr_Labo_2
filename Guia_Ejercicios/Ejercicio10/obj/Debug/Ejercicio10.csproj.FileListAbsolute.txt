@@ -1,0 +1,14 @@
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\bin\Debug\Ejercicio10.exe.config
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\bin\Debug\Ejercicio10.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\bin\Debug\Ejercicio10.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\obj\Debug\Ejercicio10.csprojAssemblyReference.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\obj\Debug\Ejercicio10.csproj.CoreCompileInputs.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\obj\Debug\Ejercicio10.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Clase1\Ejercicio10\obj\Debug\Ejercicio10.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\bin\Debug\Ejercicio10.exe.config
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\bin\Debug\Ejercicio10.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\bin\Debug\Ejercicio10.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\obj\Debug\Ejercicio10.csprojAssemblyReference.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\obj\Debug\Ejercicio10.csproj.CoreCompileInputs.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\obj\Debug\Ejercicio10.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio10\obj\Debug\Ejercicio10.pdb
