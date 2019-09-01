@@ -1,0 +1,7 @@
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\bin\Debug\Ejercicio11.exe.config
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\bin\Debug\Ejercicio11.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\bin\Debug\Ejercicio11.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\obj\Debug\Ejercicio11.csprojAssemblyReference.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\obj\Debug\Ejercicio11.csproj.CoreCompileInputs.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\obj\Debug\Ejercicio11.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio11\obj\Debug\Ejercicio11.pdb

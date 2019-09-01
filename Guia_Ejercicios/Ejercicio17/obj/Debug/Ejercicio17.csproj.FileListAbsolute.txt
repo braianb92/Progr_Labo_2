@@ -1,0 +1,7 @@
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\bin\Debug\Ejercicio17.exe.config
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\bin\Debug\Ejercicio17.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\bin\Debug\Ejercicio17.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\obj\Debug\Ejercicio17.csproj.CoreCompileInputs.cache
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\obj\Debug\Ejercicio17.exe
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\obj\Debug\Ejercicio17.pdb
+C:\Users\baldi\Documents\UTN_WorkSpace\Progr_Labo_2\Guia_Ejercicios\Ejercicio17\obj\Debug\Ejercicio17.csprojAssemblyReference.cache
