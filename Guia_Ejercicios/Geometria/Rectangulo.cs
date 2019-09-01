@@ -8,12 +8,15 @@ namespace Geometria
 {
     class Rectangulo
     {
-        public float area;
-        public float perimetro;
+        private float area;
+        private float perimetro;
         Punto vertice1;
         Punto vertice2;
         Punto vertice3;
         Punto vertice4;
+
+        public Rectangulo() { }
+
 
         public float Area()
         {
