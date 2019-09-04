@@ -1,0 +1,6 @@
+D:\Baldino\Progr_Labo_2-master\Repaso\Repaso\bin\Debug\Repaso.exe.config
+D:\Baldino\Progr_Labo_2-master\Repaso\Repaso\bin\Debug\Repaso.exe
+D:\Baldino\Progr_Labo_2-master\Repaso\Repaso\bin\Debug\Repaso.pdb
+D:\Baldino\Progr_Labo_2-master\Repaso\Repaso\obj\Debug\Repaso.csproj.CoreCompileInputs.cache
+D:\Baldino\Progr_Labo_2-master\Repaso\Repaso\obj\Debug\Repaso.exe
+D:\Baldino\Progr_Labo_2-master\Repaso\Repaso\obj\Debug\Repaso.pdb
