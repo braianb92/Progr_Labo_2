@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29102.190
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio1", "Clase1\Ejercicio1.csproj", "{905B230A-3CFB-4DB2-A85A-9FB2AE2F2333}"
 EndProject
@@ -32,6 +32,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometria", "Geometria\Geometria.csproj", "{13746D97-8024-49C9-926F-039BACC56D95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaGeometria", "PruebaGeometria\PruebaGeometria.csproj", "{B6EB44DC-F833-48F3-A755-BEAAED5C47A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicio20", "Ejercicio20", "{D4C189C6-AF21-4F34-BD01-1F64F44FA0A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billetes", "Billetes\Billetes.csproj", "{36CB6744-18D3-46DB-968C-80AF45252CE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +99,10 @@ Global
 		{B6EB44DC-F833-48F3-A755-BEAAED5C47A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6EB44DC-F833-48F3-A755-BEAAED5C47A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6EB44DC-F833-48F3-A755-BEAAED5C47A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CB6744-18D3-46DB-968C-80AF45252CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CB6744-18D3-46DB-968C-80AF45252CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CB6744-18D3-46DB-968C-80AF45252CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CB6744-18D3-46DB-968C-80AF45252CE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +110,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{13746D97-8024-49C9-926F-039BACC56D95} = {3E0E8ADC-397F-43D8-9BFC-89C12C11760F}
 		{B6EB44DC-F833-48F3-A755-BEAAED5C47A4} = {3E0E8ADC-397F-43D8-9BFC-89C12C11760F}
+		{36CB6744-18D3-46DB-968C-80AF45252CE6} = {D4C189C6-AF21-4F34-BD01-1F64F44FA0A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44FAB219-814D-4415-B0E7-1C6D90EF0DB9}
