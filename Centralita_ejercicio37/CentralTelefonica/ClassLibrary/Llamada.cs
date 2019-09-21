@@ -7,18 +7,23 @@ using System.Threading.Tasks;
 namespace ClassLibrary
 {
 
-    class Llamada
+    public class Llamada
     {
-        protected float duracion { get; }
-        protected string nroDestino { get; }
-        protected string nroOrigen { get; }
+        protected float duracion;
+        protected string nroDestino;
+        protected string nroOrigen;
 
-        public Enum TipoLlamada
+        public float Duracion { get { return duracion; } }
+        public string NroDestino { get { return nroDestino; } }
+        public string NroOrigen { get { return nroOrigen; } }
+
+        public enum TipoLlamada
         {
             Local,
-            Provincia,
+            Provincial,
             Todas
-        }
+        }   
+        
 
         public Llamada(float duracion,string nroDestino,string nroOrigen)
         {
@@ -31,6 +36,8 @@ namespace ClassLibrary
         {
             if (llamada1.duracion > llamada2.duracion)
                 return 1;
+            else if (llamada1.duracion < llamada2.duracion)
+                return -1;
             else
                 return 0;
         }
@@ -44,5 +51,6 @@ namespace ClassLibrary
             sb.AppendLine("---------------------");
             return sb.ToString();
         }
+
     }
 }
