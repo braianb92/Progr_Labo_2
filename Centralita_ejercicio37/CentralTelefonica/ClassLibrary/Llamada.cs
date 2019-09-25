@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ClassLibrary
 {
 
-    public class Llamada
+    public abstract class Llamada
     {
         protected float duracion;
         protected string nroDestino;
@@ -16,6 +16,7 @@ namespace ClassLibrary
         public float Duracion { get { return duracion; } }
         public string NroDestino { get { return nroDestino; } }
         public string NroOrigen { get { return nroOrigen; } }
+        public abstract float CostoLlamada { get; }
 
         public enum TipoLlamada
         {
@@ -42,15 +43,40 @@ namespace ClassLibrary
                 return 0;
         }
 
-        public string Mostrar()
+         protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Duracion: {this.duracion}");
-            sb.AppendLine($"N° Origen: {this.nroDestino}");
-            sb.AppendLine($"N° Destino: {this.nroDestino}");
+            sb.AppendLine($"Duracion: {Duracion}");
+            sb.AppendLine($"N° Origen: {NroOrigen}");
+            sb.AppendLine($"N° Destino: {NroDestino}");
             sb.AppendLine("---------------------");
             return sb.ToString();
         }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
+
+        public static bool operator == (Llamada l1,Llamada l2)
+        {
+            if(l1.NroOrigen == l2.NroOrigen && l1.NroDestino == l2.NroDestino)
+            {
+                if(l1)
+                {
+
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(Llamada l1, Llamada l2)
+        {
+            return !(l1 == l2);
+        }
+
 
     }
 }

@@ -27,9 +27,9 @@ namespace ClassLibrary
             this.franjaHoraria = miFranja;
         }
 
-        public float CostoLlamada()
+        public override float CostoLlamada
         {
-            return this.CalcularCosto();
+            get { return this.CalcularCosto(); }
         }
 
         private float CalcularCosto()
@@ -45,10 +45,17 @@ namespace ClassLibrary
         public new string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Costo Llamada: {CostoLlamada().ToString()}");
-            sb.AppendLine($"Franja Horaria: {franjaHoraria.ToString()}");
+            sb.AppendLine($"Costo Llamada: {CostoLlamada}");
+            sb.AppendLine($"Franja Horaria: {franjaHoraria}");
             sb.AppendLine(base.Mostrar());
             return sb.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (this.GetType() == obj.GetType())
+                return true;
+            return false;
         }
     }
 }

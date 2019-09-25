@@ -43,12 +43,12 @@ namespace ClassLibrary
                     if (llamada is Local)
                     {
                         local = (Local)llamada;
-                        acumulador += local.CostoLlamada();
+                        acumulador += local.CostoLlamada;
                     }
                     else if (llamada is Provincial)
                     {
                         provincial = (Provincial)llamada;
-                        acumulador += provincial.CostoLlamada();
+                        acumulador += provincial.CostoLlamada;
                     }
                 }
             }
@@ -59,7 +59,7 @@ namespace ClassLibrary
                     if (llamada is Local)
                     {
                         local = (Local)llamada;
-                        acumulador += local.CostoLlamada();
+                        acumulador += local.CostoLlamada;
                     }
                 }
             }
@@ -70,7 +70,7 @@ namespace ClassLibrary
                     if (llamada is Provincial)
                     {
                         provincial = (Provincial)llamada;
-                        acumulador += provincial.CostoLlamada();
+                        acumulador += provincial.CostoLlamada;
                     }
                 }              
             }
@@ -107,7 +107,7 @@ namespace ClassLibrary
             foreach (Llamada llamada in Llamadas)
             {
                 sb.AppendLine($"\n***Detalle Llamada***");
-                sb.AppendLine($"{llamada.Mostrar()}");
+                sb.AppendLine($"{llamada.ToString()}");
             }          
             return sb.ToString();
         }
