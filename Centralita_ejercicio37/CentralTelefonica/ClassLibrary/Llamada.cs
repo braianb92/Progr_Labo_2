@@ -61,14 +61,8 @@ namespace ClassLibrary
 
         public static bool operator == (Llamada l1,Llamada l2)
         {
-            if(l1.NroOrigen == l2.NroOrigen && l1.NroDestino == l2.NroDestino)
-            {
-                if(l1)
-                {
-
-                }
+            if(l1.NroOrigen == l2.NroOrigen && l1.NroDestino == l2.NroDestino && l1.Equals(l2))
                 return true;
-            }
             return false;
         }
 

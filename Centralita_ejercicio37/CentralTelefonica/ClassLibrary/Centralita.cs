@@ -29,17 +29,22 @@ namespace ClassLibrary
             this.razonSocial = nombreEmpresa;
         }
 
+        private void AgregarLlamada(Llamada llamadaNueva)
+        {
+            this.listaDeLlamadas.Add(llamadaNueva);
+        }
+
 
         private float CalcularGanancia(Llamada.TipoLlamada tipo)
         {
             float acumulador = 0;
             Local local;
             Provincial provincial;
-           
+
             if (tipo == Llamada.TipoLlamada.Todas)
             {
                 foreach (Llamada llamada in Llamadas)
-                {   
+                {
                     if (llamada is Local)
                     {
                         local = (Local)llamada;
@@ -52,7 +57,7 @@ namespace ClassLibrary
                     }
                 }
             }
-            else if(tipo == Llamada.TipoLlamada.Local)
+            else if (tipo == Llamada.TipoLlamada.Local)
             {
                 foreach (Llamada llamada in Llamadas)
                 {
@@ -72,7 +77,7 @@ namespace ClassLibrary
                         provincial = (Provincial)llamada;
                         acumulador += provincial.CostoLlamada;
                     }
-                }              
+                }
             }
             return acumulador;
         }
@@ -84,20 +89,20 @@ namespace ClassLibrary
 
         public float GananciasPorProvincial
         {
-           get { return CalcularGanancia(Llamada.TipoLlamada.Provincial); }
+            get { return CalcularGanancia(Llamada.TipoLlamada.Provincial); }
         }
 
         public float GananciasPorTotal
         {
-           get { return CalcularGanancia(Llamada.TipoLlamada.Todas); }
+            get { return CalcularGanancia(Llamada.TipoLlamada.Todas); }
         }
 
         public void OrdenarLlamadas()
         {
-            Llamadas.Sort(Llamada.OrdenarPorDuracion);       
+            Llamadas.Sort(Llamada.OrdenarPorDuracion);
         }
 
-        public string Mostrar()
+        private string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Razon Social: {razonSocial}");
@@ -108,8 +113,35 @@ namespace ClassLibrary
             {
                 sb.AppendLine($"\n***Detalle Llamada***");
                 sb.AppendLine($"{llamada.ToString()}");
-            }          
+            }
             return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
+        public static bool operator ==(Centralita c, Llamada l)
+        {
+            foreach (Llamada llamada in c.Llamadas)
+            {
+                if (llamada == l)
+                    return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(Centralita c, Llamada l)
+        {
+            return !(c == l);
+        }
+
+        public static Centralita operator + (Centralita c, Llamada llamadaNueva)
+        {
+            if(c!=llamadaNueva)
+                c.AgregarLlamada(llamadaNueva);
+            return c;
         }
     }
 }

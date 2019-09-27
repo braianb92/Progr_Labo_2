@@ -30,7 +30,7 @@ namespace ClassLibrary
             return this.costo * this.duracion;
         }
 
-        public new string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Costo Llamada: {CostoLlamada}");
@@ -40,9 +40,12 @@ namespace ClassLibrary
 
         public override bool Equals(object obj)
         {
-            if(this.GetType() == obj.GetType())
-                return true;
-            return false;
+            return obj is Local;
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
         }
 
     }

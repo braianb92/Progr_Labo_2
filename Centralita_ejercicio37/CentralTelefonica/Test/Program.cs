@@ -22,17 +22,12 @@ namespace Test
 
             // Las llamadas se irán registrando en la Centralita.
             // La centralita mostrará por pantalla todas las llamadas según las vaya registrando.
-            c.Llamadas.Add(l1);
-            Console.WriteLine(c.Mostrar());
-            c.Llamadas.Add(l2);
-            Console.WriteLine(c.Mostrar());
-            c.Llamadas.Add(l3);
-            Console.WriteLine(c.Mostrar());
-            c.Llamadas.Add(l4);
-            Console.WriteLine(c.Mostrar());
-
+            c = c + l1;
+            c = c + l2;
+            c = c + l3;
+            c = c + l4;
             c.OrdenarLlamadas();
-            Console.WriteLine(c.Mostrar());
+            Console.WriteLine(c.ToString());
 
             Console.ReadKey();
 

@@ -42,7 +42,7 @@ namespace ClassLibrary
                 return Duracion * (float)0.66;
         }
 
-        public new string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Costo Llamada: {CostoLlamada}");
@@ -53,9 +53,12 @@ namespace ClassLibrary
 
         public override bool Equals(object obj)
         {
-            if (this.GetType() == obj.GetType())
-                return true;
-            return false;
+            return obj is Provincial;
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
         }
     }
 }
