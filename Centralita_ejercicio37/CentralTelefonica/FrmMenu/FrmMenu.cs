@@ -42,7 +42,7 @@ namespace FrmMenu
 
         private void BtnGenerarLlamada_Click(object sender, EventArgs e)
         {
-            FrmLlamador llamadaForm = new FrmLlamador();
+            FrmLlamador llamadaForm = new FrmLlamador(centralita);
             llamadaForm.Show();
         }
 
