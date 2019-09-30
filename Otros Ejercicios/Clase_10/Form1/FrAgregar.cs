@@ -11,17 +11,19 @@ using System.Windows.Forms;
 
 namespace Form1
 {
-    public partial class Form1 : Form
+    public partial class FrAgregar : Form
     {
-        public List<Persona> personas { get; set; }
-        public Form1()
+        private Persona persona { get; set; }
+
+        public Persona Persona { get { return persona; } }
+
+        public FrAgregar()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.personas = new List<Persona>();
             this.cmbTipoEmpleado.DataSource = Enum.GetValues(typeof(ETipoEmpleado));
         }
 
@@ -30,17 +32,17 @@ namespace Form1
             switch (this.cmbTipoEmpleado.Text)
             {
                 case "Empleado":
-                    personas.Add(new Empleado(txtNombre.Text, Convert.ToInt32(txtCuil.Text), (float)Convert.ToDouble(txtSueldo.Text)));
+                    this.persona = (new Empleado(txtNombre.Text, Convert.ToInt32(txtCuil.Text), (float)Convert.ToDouble(txtSueldo.Text)));
                     break;
                 case "Jefe":
-                    personas.Add(new Jefe(txtNombre.Text, Convert.ToInt32(txtCuil.Text), (float)Convert.ToDouble(txtSueldo.Text),Convert.ToInt32(txtBono.Text)));
+                    this.persona = (new Jefe(txtNombre.Text, Convert.ToInt32(txtCuil.Text), (float)Convert.ToDouble(txtSueldo.Text),Convert.ToInt32(txtBono.Text)));
                     break;
                 case "Vendedor":
-                    personas.Add(new Vendedor(txtNombre.Text, Convert.ToInt32(txtCuil.Text), (float)Convert.ToDouble(txtSueldo.Text), Convert.ToInt32(txtObjetivo.Text)));
+                    this.persona = (new Vendedor(txtNombre.Text, Convert.ToInt32(txtCuil.Text), (float)Convert.ToDouble(txtSueldo.Text), Convert.ToInt32(txtObjetivo.Text)));
                     break;
                 default:
                     break;
-            }
+            }           
             Limpiar();
             
         }
@@ -68,20 +70,6 @@ namespace Form1
             txtObjetivo.Text = "";
             txtBono.Text = "";
             txtSueldo.Text = "";
-        }
-
-        private void btnMostrar_Click(object sender, EventArgs e)
-        {
-            foreach (var item in personas)
-            {
-                MessageBox.Show(item.Mostrar());
-            }
-        }
-
-        private void btnAumentar_Click(object sender, EventArgs e)
-        {
-            frAumentar formAumentar = new frAumentar(personas);
-            formAumentar.Show(this);
         }
     }
 

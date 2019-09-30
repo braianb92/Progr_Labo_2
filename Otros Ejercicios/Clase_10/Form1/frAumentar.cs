@@ -13,17 +13,17 @@ namespace Form1
 {
     public partial class frAumentar : Form
     {
-        public List<Persona> listaPersonas;
+        public List<Persona> personas;
 
-        public frAumentar(List<Persona> personas)
+        public frAumentar()
         {
+            personas = new List<Persona>();
             InitializeComponent();
-            listaPersonas = personas;
         }
 
         private void frAumentar_Load(object sender, EventArgs e)
         {
-            listBox.DataSource = listaPersonas;
+            listBox.DataSource = personas;
         }
 
 
@@ -35,7 +35,16 @@ namespace Form1
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox.DataSource = null;
-            listBox.DataSource = listaPersonas;
+            listBox.DataSource = personas;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FrAgregar frAgregar = new FrAgregar();
+            frAgregar.Show();
+            personas.Add(frAgregar.Persona);
+            listBox.DataSource = null;
+            listBox.DataSource = personas;
         }
     }
 }

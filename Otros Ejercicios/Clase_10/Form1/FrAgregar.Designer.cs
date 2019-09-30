@@ -1,6 +1,6 @@
 ﻿namespace Form1
 {
-    partial class Form1
+    partial class FrAgregar
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -41,8 +41,6 @@
             this.lblBono = new System.Windows.Forms.Label();
             this.txtObjetivo = new System.Windows.Forms.TextBox();
             this.lblObjetivo = new System.Windows.Forms.Label();
-            this.btnMostrar = new System.Windows.Forms.Button();
-            this.btnAumentar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -104,7 +102,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(211, 328);
+            this.btnAgregar.Location = new System.Drawing.Point(119, 330);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(113, 42);
             this.btnAgregar.TabIndex = 9;
@@ -156,34 +154,12 @@
             this.lblObjetivo.Text = "Objetivo";
             this.lblObjetivo.Visible = false;
             // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Location = new System.Drawing.Point(54, 328);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(113, 42);
-            this.btnMostrar.TabIndex = 15;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
-            // 
-            // btnAumentar
-            // 
-            this.btnAumentar.Location = new System.Drawing.Point(258, 31);
-            this.btnAumentar.Name = "btnAumentar";
-            this.btnAumentar.Size = new System.Drawing.Size(75, 23);
-            this.btnAumentar.TabIndex = 16;
-            this.btnAumentar.Text = "Aumentar";
-            this.btnAumentar.UseVisualStyleBackColor = true;
-            this.btnAumentar.Click += new System.EventHandler(this.btnAumentar_Click);
-            // 
-            // Form1
+            // FrAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(356, 414);
-            this.Controls.Add(this.btnAumentar);
-            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.txtObjetivo);
             this.Controls.Add(this.lblObjetivo);
             this.Controls.Add(this.txtBono);
@@ -199,7 +175,7 @@
             this.Controls.Add(this.lblNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -223,8 +199,6 @@
         private System.Windows.Forms.Label lblBono;
         private System.Windows.Forms.TextBox txtObjetivo;
         private System.Windows.Forms.Label lblObjetivo;
-        private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.Button btnAumentar;
     }
 }
 

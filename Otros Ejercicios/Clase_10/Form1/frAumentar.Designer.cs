@@ -32,6 +32,7 @@
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.btnAplicarAumento = new System.Windows.Forms.Button();
             this.listBox = new System.Windows.Forms.ListBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPorcentaje
@@ -73,11 +74,22 @@
             this.listBox.TabIndex = 4;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(420, 476);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(95, 38);
+            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // frAumentar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 462);
+            this.ClientSize = new System.Drawing.Size(545, 535);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.btnAplicarAumento);
             this.Controls.Add(this.txtPorcentaje);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.Button btnAplicarAumento;
         private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
