@@ -38,15 +38,15 @@ namespace FrmMenu
             {
                 Provincial.Franja franja;
                 Enum.TryParse<Provincial.Franja>(cmbFranja.SelectedValue.ToString(), out franja);
-                Provincial nuevaLlamada = new Provincial(txtNroOrigen.Text,franja,llamada,duracionAleatoria,txtNroDestino.Text);
+                Provincial nuevaLlamada = new Provincial(txtNroOrigen.Text, franja, duracionAleatoria, txtNroDestino.Text);
 
             }
             else
             {
-               float costoAleatorio = random.Next(1, 5);
-               Local nuevaLlamada = new Local(txtNroOrigen.Text,llamada,costoAleatorio,txtNroDestino.Text);
+                float costoAleatorio = random.Next(1, 5);
+                Local nuevaLlamada = new Local(txtNroOrigen.Text,duracionAleatoria,(float)1.5);
             }
-            
+
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
