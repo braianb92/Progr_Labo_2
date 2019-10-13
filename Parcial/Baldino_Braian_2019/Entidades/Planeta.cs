@@ -18,7 +18,10 @@ namespace Entidades
         }
 
         public Planeta(int duraOrbita, int duraRot, string nombre)
-            : base(duraOrbita,duraRot,nombre) { }
+            : base(duraOrbita,duraRot,nombre)
+        {
+            this.satelites = new List<Astro>();
+        }
 
         public Planeta(int duraOrbita,int duraRot,string nombre,int cantSatelites,Tipo tipo) 
             : this(duraOrbita,duraRot,nombre)
@@ -29,7 +32,7 @@ namespace Entidades
 
         public static bool operator + (Planeta planeta, Astro astro)
         {
-            if (astro is Satelite)
+            if (astro is Satelite && (planeta.Satelites.Count < planeta.cantSatelites))
             {
                 planeta.Satelites.Add(astro);
                 return true;
@@ -85,12 +88,13 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(this.Orbitar());
+            sb.Append(this.Mostrar());
             sb.AppendLine($"Cantidad de satelites: {this.cantSatelites}");
             sb.AppendLine($"Tipo: {this.tipo}");
             sb.AppendLine($"**Satelites**");
-            foreach (Astro astro in this.Satelites)
+            foreach (Satelite satelite in this.Satelites)
             {
-                sb.AppendLine((string)astro);
+                sb.AppendLine(satelite.ToString());
             }
             return sb.ToString();
         }

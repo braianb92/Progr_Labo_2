@@ -43,6 +43,6 @@ namespace Entidades
         {
             return astro.nombre;
         }
-         
+
     }
 }

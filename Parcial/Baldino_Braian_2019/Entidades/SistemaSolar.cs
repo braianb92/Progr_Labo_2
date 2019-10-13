@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class SistemaSolar
+    public class SistemaSolar
     {
         private List<Astro> planetas;
 
