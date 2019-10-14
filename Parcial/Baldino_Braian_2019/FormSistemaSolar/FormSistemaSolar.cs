@@ -31,26 +31,29 @@ namespace FormSistemaSolar
 
         private void btnAgregarSatelite_Click(object sender, EventArgs e)
         {
-            if(planetas.Count>0)
+            if(planetas.Count>0 && txtNombreSatelite.Text != "" && 
+                (int)numOrbitaSatelite.Value >= 0 && (int)numRotacionSatelite.Value >= 0)
             {
-                if(txtNombreSatelite.Text!="" && (int)numOrbitaSatelite.Value>=0 && (int)numRotacionSatelite.Value >= 0)
-                {
                     Satelite satelite = new Satelite((int)numOrbitaSatelite.Value, (int)numRotacionSatelite.Value, txtNombreSatelite.Text);
 
                     foreach (Planeta planeta in planetas)
                     {
-                        if (planeta.ToString() == cmbPlanetas.SelectedItem && planeta + satelite)
+                        if ((string)planeta == (string)cmbPlanetas.SelectedItem && planeta!=satelite && planeta + satelite)
                         {
                             MessageBox.Show("El satelite fue agregado correctamente!");
                             break;
                         }
-                    }
-                }
-                else
-                    MessageBox.Show("Uno o mas campos no son validos!");
+                        else
+                        {
+                            MessageBox.Show("El satelite ya existe o el planeta no posee mas capacidad.");
+                            break;
+                        }
+                            
+                    }         
             }
             else
-                MessageBox.Show("Error, no hay planetas en la lista!");
+                MessageBox.Show("Uno o mas campos no son validos!");
+            Limpiar();
         }
 
         private void btnAgregarPlaneta_Click(object sender, EventArgs e)
@@ -61,8 +64,15 @@ namespace FormSistemaSolar
                 {
                     Planeta planeta = new Planeta(numOrbita, (int)numRotacion.Value, txtNombrePlaneta.Text,
                                                 (int)numSatelite.Value, (Tipo)cmbTipo.SelectedItem);
-
                     FormSistemaSolar.planetas.Add(planeta);                   
+                    cmbPlanetas.Items.Clear();
+                    foreach (Astro item in planetas)
+                    {
+                        if (item is Planeta)
+                        {
+                            cmbPlanetas.Items.Add((string)item);
+                        }
+                    }
                     btnAgregarSatelite.Enabled = true;
                     MessageBox.Show("Se agrego Correctamente!");
                 }
@@ -72,20 +82,43 @@ namespace FormSistemaSolar
             }
             else
                 MessageBox.Show("Alguno de los campos no es valido!");
-            cmbPlanetas.DataSource = FormSistemaSolar.planetas;
+            Limpiar();
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
+            richTextBox1.Text = "";
             foreach (Planeta planeta in FormSistemaSolar.planetas)
             {
-                richTextBox1.Text = planeta.ToString();
+                richTextBox1.Text += planeta.ToString();
             }
         }
 
         private void btnMoverAstros_Click(object sender, EventArgs e)
         {
+            richTextBox1.Text = "";
+            foreach (Planeta planeta in planetas)
+            {
+                richTextBox1.Text += planeta.Orbitar() + "\n" + planeta.Rotar();
+                foreach (Satelite satelite in planeta.Satelites)
+                {
+                    richTextBox1.Text += satelite.Orbitar() + satelite.Rotar();
+                }
+                richTextBox1.Text += "************\n";
 
+            }
+
+        }
+
+        public void Limpiar()
+        {
+            txtNombrePlaneta.Text = "";
+            txtNombreSatelite.Text = "";
+            txtOrbitaPlaneta.Text = "";
+            numRotacion.Value = 0;
+            numRotacionSatelite.Value = 0;
+            numOrbitaSatelite.Value = 0;
+            numSatelite.Value = 0;
         }
 
 

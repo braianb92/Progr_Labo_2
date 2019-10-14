@@ -280,6 +280,7 @@
             this.Controls.Add(this.lblTiempoOrbita);
             this.Controls.Add(this.lblNombrePlaneta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormSistemaSolar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Baldino Braian";
