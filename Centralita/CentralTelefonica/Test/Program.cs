@@ -24,6 +24,7 @@ namespace Test
             // La centralita mostrará por pantalla todas las llamadas según las vaya registrando.
             c = c + l1;
             c = c + l2;
+            c = c + l2;
             c = c + l3;
             c = c + l4;
             c.OrdenarLlamadas();

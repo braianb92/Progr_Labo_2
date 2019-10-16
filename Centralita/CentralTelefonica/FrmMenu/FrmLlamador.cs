@@ -31,21 +31,34 @@ namespace FrmMenu
         private void BtnLlamar_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            Llamada llamada;
             float duracionAleatoria = (float)random.Next(1, 50);
 
-            if (txtNroDestino.Text.StartsWith("#"))
+            if (txtNroOrigen.Text != "Nro Origen")
             {
-                Provincial.Franja franja;
-                Enum.TryParse<Provincial.Franja>(cmbFranja.SelectedValue.ToString(), out franja);
-                Provincial nuevaLlamada = new Provincial(txtNroOrigen.Text, franja, duracionAleatoria, txtNroDestino.Text);
+                if (txtNroDestino.Text.StartsWith("#"))
+                {
+                    Provincial.Franja franja;
+                    Enum.TryParse<Provincial.Franja>(cmbFranja.SelectedValue.ToString(), out franja);
+                    Provincial nuevaLlamada = new Provincial(txtNroOrigen.Text, franja, duracionAleatoria, txtNroDestino.Text);
+                    try
+                    {
+                        centralita = centralita + nuevaLlamada;
+                        MessageBox.Show("Se realizo la llamada Provincial!");
+                    }
+                    catch (CentralitaException ex )
+                    {
 
+                    }                                 
+                }
+                else
+                {
+                    float costoAleatorio = random.Next(1, 5);
+                    Local nuevaLlamada = new Local(txtNroOrigen.Text, duracionAleatoria, txtNroDestino.Text, costoAleatorio);
+                    centralita = centralita + nuevaLlamada;
+                    MessageBox.Show("Se realizo la llamada Local!");
+                }
             }
-            else
-            {
-                float costoAleatorio = random.Next(1, 5);
-                Local nuevaLlamada = new Local(txtNroOrigen.Text,duracionAleatoria,(float)1.5);
-            }
+           
 
         }
 

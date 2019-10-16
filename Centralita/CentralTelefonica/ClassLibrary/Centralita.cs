@@ -139,8 +139,14 @@ namespace ClassLibrary
 
         public static Centralita operator + (Centralita c, Llamada llamadaNueva)
         {
-            if(c!=llamadaNueva)
+            if (c != llamadaNueva)
                 c.AgregarLlamada(llamadaNueva);
+            else
+            {
+                CentralitaException centralitaException = new CentralitaException("La llamada se encuentra registrada en el sistema", "Centralita", "+");
+                throw centralitaException;
+            }
+                
             return c;
         }
     }

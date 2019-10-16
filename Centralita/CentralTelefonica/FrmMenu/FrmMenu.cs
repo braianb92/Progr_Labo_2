@@ -27,17 +27,21 @@ namespace FrmMenu
 
         private void BtnFacturacionProvincial_Click(object sender, EventArgs e)
         {
-
+            FrmMostrar frmMostrar = new FrmMostrar(centralita,Llamada.TipoLlamada.Provincial);
+            frmMostrar.Show();
         }
 
         private void BtnFacturacionTotal_Click(object sender, EventArgs e)
-        {
-
+        {  
+            FrmMostrar frmMostrar = new FrmMostrar(centralita, Llamada.TipoLlamada.Todas);
+            frmMostrar.Show();
         }
 
         private void BtnFacturacionLocal_Click(object sender, EventArgs e)
         {
-
+            
+            FrmMostrar frmMostrar = new FrmMostrar(centralita, Llamada.TipoLlamada.Local);
+            frmMostrar.Show();
         }
 
         private void BtnGenerarLlamada_Click(object sender, EventArgs e)
