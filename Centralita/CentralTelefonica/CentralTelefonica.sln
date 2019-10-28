@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Central_Telefonica_Forms", "FrmMenu\Central_Telefonica_Forms.csproj", "{41861DBA-B1F2-4364-8BB4-645790E73454}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit_Test_41", "Unit_Test_41\Unit_Test_41.csproj", "{C35746C4-6D72-4734-B5B0-FB624BB9277C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{41861DBA-B1F2-4364-8BB4-645790E73454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41861DBA-B1F2-4364-8BB4-645790E73454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41861DBA-B1F2-4364-8BB4-645790E73454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35746C4-6D72-4734-B5B0-FB624BB9277C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35746C4-6D72-4734-B5B0-FB624BB9277C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35746C4-6D72-4734-B5B0-FB624BB9277C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35746C4-6D72-4734-B5B0-FB624BB9277C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

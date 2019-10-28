@@ -146,8 +146,7 @@ namespace ClassLibrary
                 CentralitaException centralitaException = new CentralitaException("La llamada se encuentra registrada en el sistema", "Centralita", "+");
                 throw centralitaException;
             }
-                
-            return c;
+            return c;                                
         }
     }
 }

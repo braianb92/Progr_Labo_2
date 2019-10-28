@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class AutoF1 : VehiculoDeCarrera
+    public class MotoCross : VehiculoDeCarrera
     {
-       
-        private short caballosDeFuerza;
+        private short cilindrada;
 
-        public AutoF1 (short numero,string escuderia) : base(numero,escuderia)
+        public MotoCross(short numero, string escuderia) : base(numero, escuderia)
         {
-            caballosDeFuerza = 0;
+            cilindrada = 0;
         }
 
-        public static bool operator == (AutoF1 a1, AutoF1 a2)
+        public static bool operator == (MotoCross a1, MotoCross a2)
         {
-            if (a1.numero == a2.numero && a1.escuderia == a2.escuderia && a1.caballosDeFuerza == a2.caballosDeFuerza )
+            if (a1.numero == a2.numero && a1.escuderia == a2.escuderia && a1.cilindrada == a2.cilindrada)
                 return true;
             return false;
         }
 
-        public static bool operator !=(AutoF1 a1, AutoF1 a2)
+        public static bool operator != (MotoCross a1, MotoCross a2)
         {
             return !(a1 == a2);
         }
@@ -32,7 +31,7 @@ namespace ClassLibrary
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.MostrarDatos());
-            sb.AppendLine($"{this.caballosDeFuerza}");
+            sb.AppendLine($"{this.cilindrada}");
             return sb.ToString();
         }
     }

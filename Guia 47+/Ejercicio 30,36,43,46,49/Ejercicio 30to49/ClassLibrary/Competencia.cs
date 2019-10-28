@@ -10,11 +10,11 @@ namespace ClassLibrary
     {
         private short cantidadCompetidores;
         private short cantidadVueltas;
-        List<AutoF1> competidores;
+        List<VehiculoDeCarrera> competidores;
 
         private Competencia()
         {
-            competidores = new List<AutoF1>();
+            competidores = new List<VehiculoDeCarrera>();
         }
 
         public Competencia(short cantidadCompetidores,short cantidadVueltas):this()
@@ -23,51 +23,58 @@ namespace ClassLibrary
             this.cantidadVueltas = cantidadVueltas;
         }
 
-        public static bool operator + (Competencia c, AutoF1 a)
+        public List<VehiculoDeCarrera> Competidores
         {
-            if(c.cantidadCompetidores > c.competidores.Count && c!=a)
+            get { return this.competidores; }
+        }
+
+        public static bool operator + (Competencia c, VehiculoDeCarrera vehiculoDeCarrera)
+        {
+            if(c.competidores.Count < c.cantidadCompetidores && c!= vehiculoDeCarrera)
             {
                 Random combustible = new Random();
 
-                a.EnCompetencia = true;
-                a.CantidadCombustible = (short)combustible.Next(1, 1000);
-                a.VueltasRestantes = c.cantidadVueltas;
+                vehiculoDeCarrera.EnCompetencia = true;
+                vehiculoDeCarrera.CantidadCombustible = (short)combustible.Next(15, 100);
+                vehiculoDeCarrera.VueltasRestantes = c.cantidadVueltas;
+                c.competidores.Add(vehiculoDeCarrera);
                 return true;
             }
             return false;
         }
 
-        public static bool operator - (Competencia c, AutoF1 a)
+        public static bool operator - (Competencia c, VehiculoDeCarrera vehiculoDeCarrera)
         {
-            if(c==a)
+            if(c== vehiculoDeCarrera)
             {
-                c.competidores.Remove(a);
+                c.competidores.Remove(vehiculoDeCarrera);
                 return true;
             }
             return false;
         }
 
-        public static bool operator == (Competencia c,AutoF1 a)
+        public static bool operator == (Competencia c, VehiculoDeCarrera vehiculoDeCarrera)
         {
-            foreach (AutoF1 auto in c.competidores)
+            foreach (VehiculoDeCarrera auto in c.competidores)
             {
-                if (auto == a)
+                if (auto == vehiculoDeCarrera)
                     return true;
             }
             return false;
         }
 
-        public static bool operator !=(Competencia c, AutoF1 a)
+        public static bool operator !=(Competencia c, VehiculoDeCarrera vehiculoDeCarrera)
         {
-            return !(c==a);
+            return !(c== vehiculoDeCarrera);
         }
 
         public string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
 
-            
-            foreach (AutoF1 auto in this.competidores)
+            sb.AppendLine($"Cantidad de Vueltas: {cantidadVueltas}");
+            sb.AppendLine($"Cantidad de Vueltas: {cantidadCompetidores}");
+            foreach (VehiculoDeCarrera auto in Competidores)
             {
                 sb.AppendLine(auto.MostrarDatos());
             }
