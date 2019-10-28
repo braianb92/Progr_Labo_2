@@ -1,0 +1,35 @@
+public class Mensaje
+    {
+        public string Usuario { get; set; }
+        public string Texto { get; set; }
+        public DateTime Hora { get; set; }
+
+
+        void serializar() {
+            XmlTextWriter xmlw = new XmlTextWriter(@"y:\Mensajes\" +
+                this.Usuario + DateTime.Now.ToString("hhmmssttt") + ".xml",
+                Encoding.ASCII);
+            XmlSerializer ser = new XmlSerializer(typeof(Mensaje));
+            ser.Serialize(xmlw, this);
+            xmlw.Close();
+
+        }
+
+        public static List<Mensaje> deserializar()
+        {
+            List<Mensaje> salida = new List<Mensaje>();
+
+            foreach (string item in Directory.GetFiles(@"y:\Mensajes"))
+            {
+                XmlTextReader xmlw = new XmlTextReader(item);
+                XmlSerializer ser = new XmlSerializer(typeof(Mensaje));
+                salida.Add((Mensaje)ser.Deserialize(xmlw));
+                xmlw.Close();
+            }
+
+            return salida;
+            
+
+        }
+
+    }
