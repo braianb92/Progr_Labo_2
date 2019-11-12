@@ -17,7 +17,7 @@ namespace thread_Eventos
     {
         public Thread Hilo;
         public event Evento EliminarPelotitas;
-        public event Evento IniciarPelotita;
+        public event Evento FinalizarEvento;
         
 
         public Pelotita()
@@ -32,7 +32,7 @@ namespace thread_Eventos
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Eliminar();         
+            EliminarPelotitas();         
         }
 
         public void SetBackgroundImg(Bitmap img)
@@ -59,6 +59,7 @@ namespace thread_Eventos
                 }
                
             }
+            FinalizarEvento();
         }
 
         public void Eliminar()

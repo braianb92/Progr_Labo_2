@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60592094-DAC0-4253-A34B-60BD5AAFFC24}</ProjectGuid>
+    <ProjectGuid>{F485AF97-908D-413D-9B37-11731E62A5BD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>thread_Eventos</RootNamespace>
-    <AssemblyName>thread_Eventos</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Ejercicio_63</RootNamespace>
+    <AssemblyName>Ejercicio_63</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,19 +52,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pelotita.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pelotita.Designer.cs">
-      <DependentUpon>Pelotita.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pelotita.resx">
-      <DependentUpon>Pelotita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,7 +65,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,18 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="33926-image-of-soccer-ball-free-download-png.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="backgroundImgBlack.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="black-background.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="crystalball.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

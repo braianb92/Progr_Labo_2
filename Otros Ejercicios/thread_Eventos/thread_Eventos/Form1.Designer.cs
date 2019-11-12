@@ -34,32 +34,38 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(309, 224);
+            this.btnIniciar.Location = new System.Drawing.Point(694, 334);
+            this.btnIniciar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(94, 38);
+            this.btnIniciar.Size = new System.Drawing.Size(141, 58);
             this.btnIniciar.TabIndex = 0;
-            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.Text = "Click me!!!";
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // btnTerminar
             // 
-            this.btnTerminar.Location = new System.Drawing.Point(456, 224);
+            this.btnTerminar.Location = new System.Drawing.Point(914, 334);
+            this.btnTerminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(94, 38);
+            this.btnTerminar.Size = new System.Drawing.Size(141, 58);
             this.btnTerminar.TabIndex = 1;
-            this.btnTerminar.Text = "Terminar";
+            this.btnTerminar.Text = "Finish";
             this.btnTerminar.UseVisualStyleBackColor = true;
             this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 274);
+            this.ClientSize = new System.Drawing.Size(1826, 422);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.btnIniciar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 
