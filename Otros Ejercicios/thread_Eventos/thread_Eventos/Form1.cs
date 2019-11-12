@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +21,12 @@ namespace thread_Eventos
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             Pelotita pelotita = new Pelotita();
-            pelotita.BackgroundImage = Properties.Resources._33926_image_of_soccer_ball_free_download_png;
+            Thread hilo = new Thread(new ParameterizedThreadStart( pelotita.Mover));
+
+            pelotita.Hilo = hilo;
+            pelotita.Hilo.Start(this.Width);
+
+            pelotita.SetBackgroundImg(Properties.Resources._33926_image_of_soccer_ball_free_download_png);
             this.Controls.Add(pelotita);
         }
 
@@ -29,9 +35,7 @@ namespace thread_Eventos
 
         }
 
-        public void 
-        {
-            
-        }
+
+        
     }
 }
