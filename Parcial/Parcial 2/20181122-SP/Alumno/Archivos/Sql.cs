@@ -17,28 +17,82 @@ namespace Archivos
 
         public Sql()
         {
-            this.conexion = new SqlConnection("Data Source=.\\sqlexpress; Initial Catalog = patentes; Integrated Security = True;");
+            // CREO UN OBJETO SQLCONECTION
+            this.conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=patentes-sp-2018;Integrated Security=True");
+            // CREO UN OBJETO SQLCOMMAND
             this.comando = new SqlCommand();
+            // INDICO EL TIPO DE COMANDO
+            this.comando.CommandType = System.Data.CommandType.Text;
+            // ESTABLEZCO LA CONEXION
             this.comando.Connection = this.conexion;
         }
 
-        public void Guardar(string tabla,  Queue<Patente> datos)
+        public void Guardar(string tabla, Queue<Patente> datos)
         {
+            //string sql = "INSERT INTO " + tabla + " (patente,tipo) VALUES";
+            //foreach (Patente p in datos)
+            //{
+            //    sql = sql + "('" + p.CodigoPatente + "','" + p.TipoCodigo.ToString() + "'),";
+            //}
+            string sql = "INSERT INTO " + tabla + " (patente,tipo) ";
+            foreach (Patente p in datos)
+            {
+                sql = sql + "SELECT '" + p.CodigoPatente + "','" + p.TipoCodigo.ToString() + "' UNION ALL ";
+            }
+
             try
             {
+                sql = sql.Substring(0, sql.Length - 11);
+                // LE PASO LA INSTRUCCION SQL
+                this.comando.CommandText = sql;
+                // ABRO LA CONEXION A LA BD
                 this.conexion.Open();
-                this.comando.
+                // EJECUTO EL COMMAND
+                this.comando.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                throw e;
+                throw;
+            }
+            finally
+            {
+                if (this.conexion.State == ConnectionState.Open)
+                    this.conexion.Close();
             }
         }
 
         public void Leer(string tabla, out Queue<Patente> datos)
         {
-            throw new NotImplementedException();
+            datos = new Queue<Patente>();
+
+            try
+            {
+                // LE PASO LA INSTRUCCION SQL
+                this.comando.CommandText = "SELECT patente,tipo FROM " + tabla;
+                // ABRO LA CONEXION A LA BD
+                this.conexion.Open();
+                // EJECUTO EL COMMAND                 
+                SqlDataReader reader = this.comando.ExecuteReader();
+                // MIENTRAS TENGA REGISTROS...
+                while (reader.Read())
+                {
+                    // ACCEDO POR NOMBRE O POR INDICE
+                    datos.Enqueue(new Patente(reader["patente"].ToString(), (Patente.Tipo)Enum.Parse(typeof(Patente.Tipo), reader["tipo"].ToString())));
+                }
+
+                //CIERRO EL DATAREADER
+                reader.Close();
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (this.conexion.State == ConnectionState.Open)
+                    this.conexion.Close();
+            }
         }
     }
 }

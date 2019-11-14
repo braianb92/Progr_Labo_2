@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace Archivos
 {
-    public class Xml<T> where T : IArchivo<T>
+    public class Xml<T> : IArchivo<T>
     {
         public void Guardar(string archivo,  T datos)
         {
