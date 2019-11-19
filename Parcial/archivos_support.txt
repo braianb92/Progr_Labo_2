@@ -1,0 +1,305 @@
+// PARCIAL PRUEBA
+
+public class Xml<T> : IArchivo<T>
+    {
+        public void Guardar(string archivo,  T datos)
+        {
+            if (!string.IsNullOrEmpty(archivo) && datos != null)
+            {
+                try
+                {
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    XmlTextWriter xmlWriter = new XmlTextWriter(path + "/" + archivo, Encoding.ASCII);
+                    XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+                    serializer.Serialize(xmlWriter, datos);
+                    xmlWriter.Close();
+                }
+                catch (Exception e)
+                {
+                    throw e ;
+                }
+            }
+        }
+
+        public void Leer(string archivo, out T datos)
+        {
+            datos = default(T);
+            if (!string.IsNullOrEmpty(archivo) && datos != null)
+            {
+                try
+                {
+                    string file = string.Empty;
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    foreach (string item in Directory.GetFiles(desktop))
+                    {
+                        if (item == archivo)
+                            file = item;
+                    }
+
+                    XmlTextReader xmlReader = new XmlTextReader(file);
+                    XmlSerializer serializer = new XmlSerializer(typeof(T));
+                    datos = (T)serializer.Deserialize(xmlReader);
+                    xmlReader.Close();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+    }
+
+public class Texto : IArchivo<Queue<Patente>>
+    {
+        public void Guardar(string archivo,  Queue<Patente> datos)
+        {
+            if (!string.IsNullOrEmpty(archivo))
+            {
+                try
+                {
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    StreamWriter sw = new StreamWriter(Path.Combine(desktop, archivo));
+                    foreach (Patente patente in datos)
+                    {
+                        sw.WriteLine(patente.ToString());
+                    }                   
+                    sw.Close();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+
+        public void Leer(string archivo, out Queue<Patente> datos)
+        {
+
+            datos = new Queue<Patente>();
+            if (!string.IsNullOrEmpty(archivo))
+            {
+                try
+                {
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    StreamReader sw = new StreamReader(Path.Combine(desktop, archivo));
+                    while(!sw.EndOfStream)
+                    {
+                        Patente auxPatente = sw.ReadLine().ValidarPatente();
+                        if (auxPatente != null)
+                            datos.Enqueue(auxPatente);
+                    }                    
+                    sw.Close();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+    }
+
+public class Sql  : IArchivo<Queue<Patente>>
+    {
+        private SqlCommand comando;
+        private SqlConnection conexion;
+
+        public Sql()
+        {
+            // CREO UN OBJETO SQLCONECTION
+            this.conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=patentes-sp-2018;Integrated Security=True");
+            // CREO UN OBJETO SQLCOMMAND
+            this.comando = new SqlCommand();
+            // INDICO EL TIPO DE COMANDO
+            this.comando.CommandType = System.Data.CommandType.Text;
+            // ESTABLEZCO LA CONEXION
+            this.comando.Connection = this.conexion;
+        }
+
+        public void Guardar(string tabla, Queue<Patente> datos)
+        {
+            //string sql = "INSERT INTO " + tabla + " (patente,tipo) VALUES";
+            //foreach (Patente p in datos)
+            //{
+            //    sql = sql + "('" + p.CodigoPatente + "','" + p.TipoCodigo.ToString() + "'),";
+            //}
+            string sql = "INSERT INTO " + tabla + " (patente,tipo) ";
+            foreach (Patente p in datos)
+            {
+                sql = sql + "SELECT '" + p.CodigoPatente + "','" + p.TipoCodigo.ToString() + "' UNION ALL ";
+            }
+
+            try
+            {
+                sql = sql.Substring(0, sql.Length - 11);
+                // LE PASO LA INSTRUCCION SQL
+                this.comando.CommandText = sql;
+                // ABRO LA CONEXION A LA BD
+                this.conexion.Open();
+                // EJECUTO EL COMMAND
+                this.comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (this.conexion.State == ConnectionState.Open)
+                    this.conexion.Close();
+            }
+        }
+
+        public void Leer(string tabla, out Queue<Patente> datos)
+        {
+            datos = new Queue<Patente>();
+
+            try
+            {
+                // LE PASO LA INSTRUCCION SQL
+                this.comando.CommandText = "SELECT patente,tipo FROM " + tabla;
+                // ABRO LA CONEXION A LA BD
+                this.conexion.Open();
+                // EJECUTO EL COMMAND                 
+                SqlDataReader reader = this.comando.ExecuteReader();
+                // MIENTRAS TENGA REGISTROS...
+                while (reader.Read())
+                {
+                    // ACCEDO POR NOMBRE O POR INDICE
+                    datos.Enqueue(new Patente(reader["patente"].ToString(), (Patente.Tipo)Enum.Parse(typeof(Patente.Tipo), reader["tipo"].ToString())));
+                }
+
+                //CIERRO EL DATAREADER
+                reader.Close();
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (this.conexion.State == ConnectionState.Open)
+                    this.conexion.Close();
+            }
+        }
+    }
+
+//TRABAJO PRACTICO 3
+
+public class Xml<T> : IArchivo<T>
+    {
+        public bool Guardar(string archivo, T datos)
+        {
+            if (!string.IsNullOrEmpty(archivo) && datos != null)
+            {
+                try
+                {
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    XmlTextWriter xmlWriter = new XmlTextWriter(path + "/" + archivo, Encoding.ASCII);
+                    XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+                    serializer.Serialize(xmlWriter, datos);
+                    xmlWriter.Close();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    throw new ArchivosException(e);
+                }
+            }
+            return false;
+        }
+
+        public bool Leer(string archivo, out T datos)
+        {          
+            datos = default(T);
+            if (!string.IsNullOrEmpty(archivo) && datos != null)
+            {
+                try
+                {
+                    string file = string.Empty;
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    foreach (string item in Directory.GetFiles(desktop))
+                    {
+                        if (item == archivo)
+                            file = item;
+                    } 
+
+                    XmlTextReader xmlReader = new XmlTextReader(file);
+                    XmlSerializer serializer = new XmlSerializer(typeof(T));
+                    datos = (T)serializer.Deserialize(xmlReader);
+                    xmlReader.Close();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    throw new ArchivosException(e);
+                }
+            }
+            return false;
+        }
+    }
+
+public class Texto : IArchivo<string>
+    {
+        /// <summary>
+        /// Guarda todos los datos que se le pasen como parametro en un archivo en el escritorio con el nombre que recibe como parametro
+        /// </summary>
+        /// <param name="archivo">Nombre del archivo</param>
+        /// <param name="datos">Info que contiene el archivo</param>
+        /// <returns>true si lo pudo crear, false si no pudo</returns>
+        public bool Guardar(string archivo, string datos)
+        {
+            bool aux = false;
+            if (!string.IsNullOrEmpty(archivo) && !string.IsNullOrEmpty(datos))
+            {
+                try
+                {
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    StreamWriter sw = new StreamWriter(Path.Combine(desktop, archivo));
+                    sw.WriteLine(datos);
+                    sw.Close();
+                    aux = true;
+                }
+                catch (Exception e)
+                {
+                    throw new ArchivosException(e);
+                }
+            }
+
+            return aux;
+        }
+
+        /// <summary>
+        /// Lee todos los datos dentro del archivo que se le pase y lo pega en el puntero a string que recibe como parametro
+        /// </summary>
+        /// <param name="archivo">Nombre del archivo</param>
+        /// <param name="datos">Donde se guarda la informacion del archivo</param>
+        /// <returns>Devuelve la info del archivo o vacio si no pudo</returns>
+        public bool Leer(string archivo, out string datos)
+        {
+            bool aux = false;
+            datos = "";
+            if (!string.IsNullOrEmpty(archivo))
+            {
+                try
+                {
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    StreamReader sw = new StreamReader(Path.Combine(desktop, archivo));
+                    datos = sw.ReadToEnd();
+                    sw.Close();
+                    aux = true;
+                }
+                catch (Exception e)
+                {
+                    throw new ArchivosException(e);
+                }
+            }
+            return aux;
+        }
+
+
+    }
