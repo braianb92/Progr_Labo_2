@@ -51,7 +51,6 @@ namespace Entidades
             {
                 string s = string.Format("{0} no cumple el formato.", str);
                 throw new PatenteInvalidaException(s);
-                throw null;
             }
         }
     }
