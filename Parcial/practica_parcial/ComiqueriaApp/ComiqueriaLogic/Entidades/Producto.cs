@@ -3,12 +3,15 @@ using System.Text;
 
 namespace ComiqueriaLogic
 {
+    [Serializable]
     public class Producto
     {
         private int stock;
         private double precio;
         private int codigo;
         private string descripcion;
+
+        public Producto() { }
 
         /// <summary>
         /// Constructor. Inicializa los atributos del producto. 

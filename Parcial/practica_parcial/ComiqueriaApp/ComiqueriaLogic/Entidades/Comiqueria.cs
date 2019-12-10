@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComiqueriaLogic.StaticClasses;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,11 +7,13 @@ using System.Text;
 
 namespace ComiqueriaLogic
 {
+    [Serializable]
     public class Comiqueria
     {
         private List<Producto> productos;
         private List<Venta> ventas;
         public event Action productosListChanged;
+
 
         /// <summary>
         /// Constructor, instancia los campos de tipo lista. 
@@ -22,6 +25,7 @@ namespace ComiqueriaLogic
              * Cree también un método que retorne la lista de productos (List<Producto>) almacenada en la tabla de productos. 
              * Utilice este método para cargar la lista de productos en la clase Comiqueria cuando se instancie una nueva comiquería.  
              */
+            this.productos = ComiqueriaDB.LeerTabla();
             this.ventas = new List<Venta>();
         }
 

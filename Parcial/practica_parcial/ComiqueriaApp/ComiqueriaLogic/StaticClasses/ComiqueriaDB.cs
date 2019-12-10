@@ -72,13 +72,12 @@ namespace ComiqueriaLogic.StaticClasses
 
             try
             {
-                comando.CommandText = String.Format($"{AccionesDB.Insert.ToString()} INTO dbo.Productos(Descripcion,Precio,Stock) VALUES('{producto.Descripcion}','{producto.Precio}','{producto.Stock}')");
+                comando.CommandText = String.Format($"{AccionesDB.Insert.ToString()} INTO dbo.Productos(descripcion,precio,stock) VALUES('{producto.Descripcion}', '{producto.Precio}', '{producto.Stock}')");
                 conexion.Open();
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-
                 throw new ComiqueriaException("Error en base de datos",ex);
             }
             finally

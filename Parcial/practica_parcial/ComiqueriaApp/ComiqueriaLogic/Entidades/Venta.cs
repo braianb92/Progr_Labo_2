@@ -3,6 +3,7 @@ using System;
 
 namespace ComiqueriaLogic
 {
+    [Serializable]
     public sealed class Venta
     {
         private static int porcentajeIva;
@@ -10,6 +11,8 @@ namespace ComiqueriaLogic
         private Producto producto;
         private double precioFinal;
         private int cantidad;
+
+        public Venta() { }
 
         /// <summary>
         /// Inicializará el porcentaje de IVA que se aplicará sobre las ventas.

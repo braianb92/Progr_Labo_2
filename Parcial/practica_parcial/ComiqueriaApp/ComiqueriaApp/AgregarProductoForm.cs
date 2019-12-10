@@ -40,8 +40,8 @@ namespace ComiqueriaApp
                 int nuevoStock = (int)this.txtStock.Value;
 
                 // Punto 4A - Insertar los datos del nuevo producto en la tabla de productos.
-                Producto producto = new Producto(nuevaDescripcion,nuevoPrecio,nuevoStock);
-                ComiqueriaDB.Insertar()
+                //Producto producto = new Producto(nuevaDescripcion,nuevoPrecio,nuevoStock);
+                //ComiqueriaDB.Insertar()
 
                 this.Close();
             }
